@@ -3311,10 +3311,9 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 }
                 return conditions;
         },
-        'VMMC, Accepted HIV test': function (formName, formFieldValues,patient) {
+        'VMMC, Accepted HIV test': function (formName, formFieldValues) {
                 var conditionConcept = formFieldValues['VMMC, Accepted HIV test'];
                 var conditions = { show: [], hide: [] };
-                var patientGender = patient['gender'];
 
                 if(formName != "HIV Testing and Counseling Intake Template" && formName != "HIV Testing Services Retesting Template" && formName != "HTC, HIV Test"){
 
@@ -3328,15 +3327,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 }
                 else if(formName == "HTC, HIV Test"){
                         if (conditionConcept) {
-                                if(patientGender == "F"){
-                                        conditions.show.push("HTC, HIV Dual Test");
-                                }
+                                conditions.show.push("HTC, HIV Dual Test");
                                 conditions.show.push("HTC, Initial HIV Test Determine");
                         }
                         else{
-                                if(patientGender == "F"){
-                                        conditions.hide.push("HTC, HIV Dual Test");
-                                }
+                                conditions.hide.push("HTC, HIV Dual Test");
                                 conditions.hide.push("HTC, Initial HIV Test Determine");
                         }
                 }
