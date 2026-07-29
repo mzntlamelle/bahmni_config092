@@ -2183,7 +2183,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
                                         conditions.show.push("HTS, Confirmatory results")
                                 }
                                 else{
-                                        conditions.hide.push("Self_Test_Buddy");
+                                        conditions.show.push("Self_Test_Buddy");
                                         conditions.hide.push("HTS, Tested on site");
                                         conditions.hide.push("HIVTC, Population Group");
                                         conditions.hide.push("Education Level");
